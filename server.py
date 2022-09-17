@@ -15,9 +15,15 @@ def render_file():
 @app.route('/fileUploader', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-      f = request.files['file']
-      filename = secure_filename(f.filename)
-      f.save('./uploads/' + filename)
+# 단일!
+#       f = request.files['file']
+#       filename = secure_filename(f.filename)
+#       f.save('./uploads/' + filename)
+
+#다수!
+      files = request.files
+      for f in files.to_dict(flat=False)['filename[]']:
+        f.save('./uploads/'+ secure_filename(f.filename))
       return redirect('/upload')
 #File Download
 @app.route('/downfile')
