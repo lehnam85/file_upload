@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File_DownLoad</title>
+</head>
+<body>
+    <div>
+        <a href="/upload">업로드 하기</a>
+    </div>
+    <center>
+        <h1>Download Files!!</h1>
+        <form action = 'http://127.0.0.1:5000/downloadfile' method = 'POST' enctype="multipart/form-data">
+            <input type='text' name = 'file' >
+            <input type="submit">
+        </form>
+    </center>
+    <br><br><br>
+    <center>
+        <h3>First List</h3>
+        <ul>
+            {% for n in files %}
+            <l1>{{n}}</l1>
+            {% endfor %}
+        </ul>
+    </center>
+</body>
+</html>

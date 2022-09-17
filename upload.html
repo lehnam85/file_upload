@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일전송</title>
+</head>
+<body>
+    <div>
+        <a href="/downfile">다운로드 하기</a>
+    </div>
+    
+    <center>
+        <h1>File Upload!!</h1>
+        <form action="http://127.0.0.1:5000/fileUploader" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" >
+        </form>
+    </center>
+    <div>
+        <center>
+            <h3>Upload List!</h3>
+            <ul>
+                {% for n in files %}
+                <l1>{{n}}<br></l1>
+                {% endfor %}
+            </ul>
+        </center>
+    </div>
+</body>
+</html>
